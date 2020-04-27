@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/margin_large">
+
+        <ImageView
+            android:id="@+id/iv_recipe_detail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/recipe_detail"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="H,16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/margin_small"
+            android:paddingEnd="@dimen/margin_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_recipe_detail">
+
+            <ImageView
+                android:id="@+id/iv_star_1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/star_height"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:contentDescription="@string/rating_image"
+                android:src="@drawable/unfilled_star"
+                app:layout_constraintEnd_toStartOf="@id/iv_star_2"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_star_2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/star_height"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:contentDescription="@string/rating_image"
+                android:src="@drawable/unfilled_star"
+                app:layout_constraintEnd_toStartOf="@id/iv_star_3"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toEndOf="@+id/iv_star_1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_star_3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/star_height"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:contentDescription="@string/rating_image"
+                android:src="@drawable/unfilled_star"
+                app:layout_constraintEnd_toStartOf="@id/iv_star_4"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toEndOf="@+id/iv_star_2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_star_4"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/star_height"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:contentDescription="@string/rating_image"
+                android:src="@drawable/unfilled_star"
+                app:layout_constraintEnd_toStartOf="@id/iv_star_5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toEndOf="@+id/iv_star_3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_star_5"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/star_height"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:contentDescription="@string/rating_image"
+                android:src="@drawable/unfilled_star"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toEndOf="@+id/iv_star_4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_recipe_detail_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:paddingStart="@dimen/margin_large"
+            android:paddingEnd="@dimen/margin_large"
+            android:textSize="@dimen/font_xlarge"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_rating"
+            tools:text="Chocolate Chip Cookies" />
+
+        <TextView
+            android:id="@+id/tv_recipe_instructions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:paddingStart="@dimen/margin_large"
+            android:paddingEnd="@dimen/margin_large"
+            android:textSize="@dimen/font_normal"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_recipe_detail_title"
+            tools:text="Preheat oven to 375. Combine all ingredients in a medium bowl. Spray a muffin tin with cooking oil. Fill the tin to the top with oats. It should make about six  eight oatmeal cakes. Bake uncovered for 20 minutes. For a light crust, broil for an additional 3-5 minutes until lightly browned. Serve on its own or with fresh fruit, yogurt, or milk." />
+
+        <include
+            android:id="@+id/layout_detail_loading"
+            layout="@layout/loading_layout"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
